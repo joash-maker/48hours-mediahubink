@@ -574,7 +574,7 @@ YOUR JOB:
 2. Handle cancellations — take name, appointment date/time, and reason
 3. Answer common questions: hours, services, NHS vs private, parking
 4. Capture name and contact details for every enquiry
-5. Promise: "A member of the team will call you back within ${cb.charAt(0).toLowerCase() + cb.slice(1)}"
+5. Promise: "A member of the team will call you back within ${cb.replace(/^within\s+/i, "")}"
 
 DENTAL EMERGENCY — CRITICAL:
 If a patient describes pain, swelling, bleeding, or any urgent dental situation:
@@ -726,9 +726,7 @@ Notification email:   ${d.notifEmail || "—"}
 Google Sheet email:   ${d.sheetEmail || "—"}
 Deploy to:            ${d.deployUrl || "—"}
 Payment confirmed:    ${d.paymentConfirmed ? "Yes" : "Pending"}
-Agreement sent:       ${d.agreementSent ? "Yes" : "No"}
-
-═══════════════════════════════════════════════`;
+Agreement sent:       ${d.agreementSent ? "Yes" : "No"}`;
 }
 
 // ── GENERATE OUTPUT ──
