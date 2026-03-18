@@ -237,13 +237,8 @@ select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns
 
       <div class="field">
         <label>Hours enquiries come in</label>
-        <select id="enquiryHours">
-          <option value="">Select…</option>
-          <option>Business hours only (Mon–Fri 9–5)</option>
-          <option>Extended hours including evenings</option>
-          <option>Weekends included</option>
-          <option>24/7 round the clock</option>
-        </select>
+        <input type="text" id="enquiryHours" placeholder="e.g. Mon–Fri 8:30–5:30 / Mon–Sat 8am–8pm / 24/7 / Evenings and weekends">
+        <div class="hint">Be specific — this goes directly into the agent prompt and affects after-hours behaviour</div>
       </div>
 
       <hr class="divider">
@@ -579,7 +574,7 @@ YOUR JOB:
 2. Handle cancellations — take name, appointment date/time, and reason
 3. Answer common questions: hours, services, NHS vs private, parking
 4. Capture name and contact details for every enquiry
-5. Promise: "A member of the team will call you back within ${cb}"
+5. Promise: "A member of the team will call you back within ${cb.charAt(0).toLowerCase() + cb.slice(1)}"
 
 DENTAL EMERGENCY — CRITICAL:
 If a patient describes pain, swelling, bleeding, or any urgent dental situation:
@@ -733,11 +728,7 @@ Deploy to:            ${d.deployUrl || "—"}
 Payment confirmed:    ${d.paymentConfirmed ? "Yes" : "Pending"}
 Agreement sent:       ${d.agreementSent ? "Yes" : "No"}
 
-═══════════════════════════════════════════════
-SYSTEM PROMPT — PASTE INTO VERCEL CONFIG
-═══════════════════════════════════════════════
-
-${generatePrompt(d)}`;
+═══════════════════════════════════════════════`;
 }
 
 // ── GENERATE OUTPUT ──
