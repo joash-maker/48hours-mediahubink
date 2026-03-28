@@ -35,7 +35,6 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
-/* ── NOISE TEXTURE ── */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -43,7 +42,7 @@ body::before {
   pointer-events: none; z-index: 0; opacity: 0.4;
 }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
@@ -66,7 +65,7 @@ nav {
 .nav-urgent::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); animation: blink 1.2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column;
   justify-content: center; padding: 8rem 5vw 4rem;
@@ -95,7 +94,7 @@ nav {
 }
 .hero-sub strong { color: var(--white); font-weight: 500; }
 
-/* ── COUNTDOWN ── */
+/* COUNTDOWN */
 .countdown-block {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -112,7 +111,7 @@ nav {
 .countdown-desc strong { color: var(--white); }
 .pulse-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); animation: blink 1.5s infinite; flex-shrink: 0; }
 
-/* ── HERO ACTIONS ── */
+/* HERO ACTIONS */
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
 .btn-red {
   background: var(--red); color: #fff;
@@ -134,7 +133,7 @@ nav {
 .hero-reassurance { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
 .hero-reassurance::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 6px var(--green); }
 
-/* ── SECTION SHARED ── */
+/* SECTION SHARED */
 .section { padding: 5rem 5vw; }
 .section-inner { max-width: var(--max); margin: 0 auto; }
 .tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 0.9rem; }
@@ -142,7 +141,7 @@ nav {
 h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 3vw, 2.8rem); line-height: 1.15; margin-bottom: 1rem; font-weight: 400; }
 h2 em { font-style: italic; color: var(--red); }
 
-/* ── CRISIS STRIP ── */
+/* CRISIS STRIP */
 .crisis-strip {
   background: var(--red-dim);
   border-top: 1px solid rgba(230,57,70,0.2);
@@ -152,13 +151,13 @@ h2 em { font-style: italic; color: var(--red); }
 }
 .crisis-ticker {
   display: flex; gap: 3rem; white-space: nowrap;
-  animation: ticker 24s linear infinite;
+  animation: ticker 30s linear infinite;
   font-size: 0.82rem; color: rgba(230,57,70,0.9); letter-spacing: 0.04em;
 }
 .crisis-ticker span::before { content: '⚡ '; }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* ── SCENARIOS ── */
+/* SCENARIOS */
 .scenarios-bg { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .scenarios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 2.5rem; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .scenario {
@@ -180,7 +179,7 @@ h2 em { font-style: italic; color: var(--red); }
 .scenario .fix { font-size: 0.78rem; color: var(--green); display: flex; align-items: flex-start; gap: 0.4rem; line-height: 1.5; }
 .scenario .fix::before { content: '✓'; flex-shrink: 0; }
 
-/* ── TIMELINE ── */
+/* TIMELINE */
 .timeline { margin-top: 2.5rem; display: grid; gap: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .tl-row {
   display: grid; grid-template-columns: 160px 1fr;
@@ -202,7 +201,7 @@ h2 em { font-style: italic; color: var(--red); }
 .tl-content h3 { font-size: 0.92rem; font-weight: 500; margin-bottom: 0.3rem; }
 .tl-content p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
 
-/* ── PRICING ── */
+/* PRICING */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
 .p-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -229,7 +228,7 @@ h2 em { font-style: italic; color: var(--red); }
 .pricing-note { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 1.2rem; }
 .pricing-note strong { color: var(--white); }
 
-/* ── GUARANTEE ── */
+/* GUARANTEE */
 .guarantee-block {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -244,7 +243,7 @@ h2 em { font-style: italic; color: var(--red); }
 .guarantee-block h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.3rem; }
 .guarantee-block p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
 
-/* ── FINAL CTA ── */
+/* FINAL CTA */
 .cta-section {
   text-align: center; padding: 7rem 5vw;
   background: var(--surface);
@@ -265,7 +264,7 @@ h2 em { font-style: italic; color: var(--red); }
 .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.2rem; }
 .cta-note { font-size: 0.75rem; color: var(--muted); }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   border-top: 1px solid var(--border);
   padding: 1.6rem 5vw;
@@ -279,7 +278,7 @@ footer {
 .footer-links a:hover { color: var(--white); }
 footer p { font-size: 0.75rem; color: var(--muted); }
 
-/* ── BACK TO TOP ── */
+/* BACK TO TOP */
 #back-to-top {
   position: fixed; bottom: 24px; left: 24px;
   width: 42px; height: 42px; border-radius: 50%;
@@ -294,11 +293,11 @@ footer p { font-size: 0.75rem; color: var(--muted); }
 #back-to-top:hover { border-color: var(--red); color: var(--red); }
 #back-to-top svg { width: 15px; height: 15px; fill: currentColor; }
 
-/* ── SCROLL REVEAL ── */
+/* SCROLL REVEAL */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:960px){
   .scenarios-grid { grid-template-columns: 1fr 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
@@ -320,15 +319,13 @@ footer p { font-size: 0.75rem; color: var(--muted); }
 
 <nav>
   <a href="https://www.mediahubink.com" class="nav-logo">Media<span>hub</span>ink</a>
-  <a href="tel:07544833862" class="nav-urgent">
-    Call Joash Now
-  </a>
+  <a href="tel:07544833862" class="nav-urgent">Call Joash Now</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">Emergency AI Cover</div>
-  <h1>YOUR TEAM<br>HAS <span class="accent">GONE.</span><br>WE HAVEN'T.</h1>
+  <h1>Your Team<br>Has <span class="accent">Gone.</span><br>We Haven't.</h1>
   <p class="hero-sub">Calls going unanswered. Leads going cold. Clients frustrated. <strong>We can have an AI agent live and handling your enquiries within 48 hours</strong> — while you sort the crisis.</p>
 
   <div class="countdown-block">
@@ -353,16 +350,22 @@ footer p { font-size: 0.75rem; color: var(--muted); }
 <!-- CRISIS TICKER -->
 <div class="crisis-strip">
   <div class="crisis-ticker">
+    <span>Electrician's office coordinator off sick, quote requests going unanswered</span>
     <span>Recruitment agency loses 6 staff overnight</span>
     <span>Dental receptionist off sick, phones unanswered</span>
+    <span>Courier firm admin leaves, job enquiries piling up</span>
     <span>Gym manager leaves mid-month, members can't get answers</span>
     <span>Serviced office front desk vacancy, viewings being missed</span>
     <span>School admissions week, office overwhelmed</span>
+    <span>Kitchen fitter's only admin person resigns, leads going cold</span>
+    <span>Electrician's office coordinator off sick, quote requests going unanswered</span>
     <span>Recruitment agency loses 6 staff overnight</span>
     <span>Dental receptionist off sick, phones unanswered</span>
+    <span>Courier firm admin leaves, job enquiries piling up</span>
     <span>Gym manager leaves mid-month, members can't get answers</span>
     <span>Serviced office front desk vacancy, viewings being missed</span>
     <span>School admissions week, office overwhelmed</span>
+    <span>Kitchen fitter's only admin person resigns, leads going cold</span>
   </div>
 </div>
 
@@ -372,6 +375,12 @@ footer p { font-size: 0.75rem; color: var(--muted); }
     <div class="tag">Crisis Scenarios</div>
     <h2>We've built for exactly<br><em>this situation.</em></h2>
     <div class="scenarios-grid reveal">
+      <div class="scenario">
+        <span class="scenario-icon">&#9889;</span>
+        <h3>Trades Business — Admin Person Gone</h3>
+        <p class="crisis-text">Your one office coordinator has left or gone sick. You're out on jobs all day. Quote requests, booking enquiries, and customer calls are going to voicemail and staying there.</p>
+        <p class="fix">AI answers every website enquiry, collects job details and contact information, and logs every lead to a spreadsheet ready for you to review at end of day.</p>
+      </div>
       <div class="scenario">
         <span class="scenario-icon">&#128084;</span>
         <h3>Recruitment Agency — Staff Walkout</h3>
@@ -414,7 +423,7 @@ footer p { font-size: 0.75rem; color: var(--muted); }
   </div>
 </section>
 
-<!-- HOW FAST -->
+<!-- TIMELINE -->
 <section class="section" id="timeline">
   <div class="section-inner">
     <div class="tag">The 48-Hour Sequence</div>
@@ -515,7 +524,7 @@ footer p { font-size: 0.75rem; color: var(--muted); }
       </div>
     </div>
 
-    <p class="pricing-note">All prices exclude VAT &bull; <strong>No long-term contract</strong> — cancel anytime after the crisis &bull; Setup fee non-refundable once deployed</p>
+    <p class="pricing-note">All prices exclude VAT &bull; <strong>No long-term contract</strong> — cancel with 30 days written notice after the crisis &bull; Setup fee non-refundable once deployed</p>
   </div>
 </section>
 
@@ -549,13 +558,11 @@ footer p { font-size: 0.75rem; color: var(--muted); }
   <p>&copy; 2026 Mediahubink</p>
 </footer>
 
-<!-- BACK TO TOP -->
 <button id="back-to-top" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
 </button>
 
 <script>
-// ── LIVE-BY COUNTDOWN ──
 (function(){
   function pad(n){ return String(n).padStart(2,'0'); }
   function update(){
@@ -577,7 +584,6 @@ footer p { font-size: 0.75rem; color: var(--muted); }
   setInterval(update, 60000);
 })();
 
-// ── BACK TO TOP ──
 (function(){
   var btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -589,7 +595,6 @@ footer p { font-size: 0.75rem; color: var(--muted); }
   });
 })();
 
-// ── SCROLL REVEAL ──
 (function(){
   var els = document.querySelectorAll('.reveal');
   if (!els.length) return;
